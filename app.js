@@ -5,14 +5,18 @@ const ulEl = document.getElementById("ul-el");
 
 inputBtn.addEventListener("click", function () {
   myLeads.push(inputEl.value);
-    inputEl.value == ""
-  rendeLeads()
+  inputEl.value == "";
+  rendeLeads();
 });
 
 function rendeLeads() {
   let listItem = "";
   for (let i = 0; i < myLeads.length; i++) {
-    listItem += "<li><a  target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] + "</a></li>"
+    listItem +=  ` <li>
+        <a target='_blank' href='${myLeads[i]}'>
+            ${myLeads[i]}
+        </a>
+    </li>  `
   }
   ulEl.innerHTML = listItem;
 }
